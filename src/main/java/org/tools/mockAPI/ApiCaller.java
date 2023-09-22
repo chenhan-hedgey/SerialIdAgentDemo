@@ -18,7 +18,7 @@ public class ApiCaller {
      * @param params
      * @return
      */
-    public static String call(String[] params){
+    private static String call(String[] params){
         logger.info("param = {}",Arrays.toString(params));
         return "模拟API调用{String[]}";
     }
@@ -29,8 +29,14 @@ public class ApiCaller {
      * @param anotherParam
      * @return
      */
-    public static String call(String[] params,String[] anotherParam){
+    private static String call(String[] params,String[] anotherParam){
         logger.info("param = {},anotherParam = {}", Arrays.toString(params),Arrays.toString(anotherParam));
         return "模拟API调用{String[],String[]}";
     }
+
+
+    public static String mockCall(String[] params){
+        return call(params);
+    }
+
 }

@@ -16,6 +16,6 @@ public class TestServiceImpl implements TestService {
     @Override
     public void test() {
         // 拦截本方法并且取出serialThreadDataTest的数据，调用为call(String[],String[])
-        ApiCaller.call(new String[]{"陈含","王永瑶","吴浪浪"});
+        ApiCaller.mockCall(new String[]{"陈含","王永瑶","吴浪浪"});
     }
 }

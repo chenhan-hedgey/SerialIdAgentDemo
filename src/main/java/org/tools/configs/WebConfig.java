@@ -1,5 +1,6 @@
 package org.tools.configs;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -17,6 +18,15 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 注册流水号拦截器
-        registry.addInterceptor(new OrderNumInterceptor());
+        registry.addInterceptor(orderNumInterceptor());
+        //registry.addInterceptor(new OrderNumInterceptor());
     }
+
+
+    @Bean
+    public OrderNumInterceptor orderNumInterceptor(){
+        return new OrderNumInterceptor();
+    }
+
+
 }
